@@ -189,8 +189,7 @@ async def process_query_service(conversation_id: str, message: Dict[str, Any]) -
         
         # Return the assistant's response along with updated conversation
         return {
-            "response": assistant_response,
-            "conversation": conversation
+            "response": assistant_response
         }
         
     except Exception as e:
