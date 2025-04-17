@@ -1,0 +1,50 @@
+BE Features
+- GET POST PUT DELETE for conversation history with LLM
+- POST for sending queries to the LLM
+- LLM must be able to read conversation history as context
+- All prompts sent to LLM is stored in database
+
+BE Stack
+- FastAPI
+- Pydantic
+- Beanie
+- OpenAI
+- Dockerized Mongo DB
+
+BE Plan
+1. Start with the models.py
+2. Develop the routes.py and link it to service functions
+3. Develop the services.py and implement the logic into each functions
+4. Create the app.py file and adjust the FastAPI configurations and start app for testing
+5. Test the endpoints and debug accordingly
+
+FE features:
+- Header.tsx for simple navbar
+- Sidebar.tsx that will show all the user's conversation
+- Chatbot.tsx to show the chat component with the LLM
+- LLMConfig.tsx to show the parameter adjustments to the LLM
+
+FE Stack:
+- NextJS 14
+- React 18
+- Maintime 6
+- React-Query 4
+
+Scenario
+---
+User clicks new conversation button
+Backend - Triggers post request to create new conversation
+User types in prompt in the request and clicks sending
+Backend - Trigger post request at /queries to log user's prompt {role: user, content: Hello}
+Creates a new text box for the user message
+LLM returns a response to the user
+Trigger another post request at /queries to log system's response {role: assistant, content: Hello how may I help you}
+Frontend receives reply, creates a new text box for LLM response
+Loop
+
+Endpoints on the Frontend
+---
+- Get all is for the Sidebar
+- Get specific is for when they click on a conversation and it will auto populate the rest of the fields
+- Delete conversation is for the small delete icon on the Sidebar
+- PUT is for the parameters config which will appear on the right side of config.tsx
