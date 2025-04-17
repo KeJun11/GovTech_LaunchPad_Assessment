@@ -17,6 +17,7 @@ BE Plan
 3. Develop the services.py and implement the logic into each functions
 4. Create the app.py file and adjust the FastAPI configurations and start app for testing
 5. Test the endpoints and debug accordingly
+6. Now that backend is working, we can dockerize it
 
 FE features:
 - Header.tsx for simple navbar
@@ -27,7 +28,7 @@ FE features:
 FE Stack:
 - NextJS 14
 - React 18
-- Maintime 6
+- Mantine 6
 - React-Query 4
 
 Scenario
